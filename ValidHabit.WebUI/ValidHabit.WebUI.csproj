@@ -6,4 +6,9 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\ValidHabit.Application\ValidHabit.Application.csproj" />
+    <ProjectReference Include="..\ValidHabit.Infrastructure\ValidHabit.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>
