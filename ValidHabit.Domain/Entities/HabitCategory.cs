@@ -5,6 +5,6 @@
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public virtual ICollection<Habit> Habits { get; set; }
+        public virtual ICollection<HabitAndCategory> Habits { get; set; }
     }
 }
