@@ -6,6 +6,7 @@ namespace ValidHabit.Domain.Entities
 {
     public class HabitExecutionFrequency
     {
+        // Constructor
         public HabitExecutionFrequency(int id, int value, FrequencyType frequencyType, TimeInterval timeInterval, int habitId)
         {
             Id = id;
@@ -17,14 +18,16 @@ namespace ValidHabit.Domain.Entities
             Validate();
         }
 
+        // Properties
         public int Id { get; init; }
-        public int Value { get; set; }
-        public FrequencyType FrequencyType { get; set; }
+        public int Value { get; init; }
+        public FrequencyType FrequencyType { get; init; }
         public TimeInterval TimeInterval { get; init; }
 
-        public int HabitId { get; }
-        public Habit Habit { get; }
+        public int HabitId { get; init; }
+        public Habit Habit { get; init; }
 
+        // Methods
         private void Validate()
         {
             if (Value <= 0)
