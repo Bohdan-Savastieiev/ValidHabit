@@ -13,7 +13,7 @@ namespace ValidHabit.Domain.Entities
         public int HabitId { get; set; }
         public virtual Habit Habit { get; set; }
 
-        public int HabitCategoryId { get; set; }
+        public int CategoryId { get; set; }
         public virtual HabitCategory Category { get; set; }
     }
 }

@@ -10,8 +10,7 @@
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
 
-
         public Guid UserId { get; set; }
-        public virtual UserProfile User { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 }

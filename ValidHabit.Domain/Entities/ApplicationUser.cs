@@ -1,6 +1,6 @@
 ﻿namespace ValidHabit.Domain.Entities
 {
-    public class UserProfile
+    public class ApplicationUser
     {
         public Guid UserId { get; set; }
         public string FirstName { get; set; }

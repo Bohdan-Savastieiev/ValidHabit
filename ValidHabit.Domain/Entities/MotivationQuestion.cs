@@ -4,5 +4,7 @@
     {
         public int Id { get; set; }
         public string Question { get; set; }
+
+        public virtual ICollection<MotivationAnswer> Answers { get; set; }
     }
 }

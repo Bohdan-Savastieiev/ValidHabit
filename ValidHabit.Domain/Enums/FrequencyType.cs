@@ -2,10 +2,8 @@
 {
     public enum FrequencyType
     {
-        PerWeek,
-        MinutesPerWeek,
-        PerMonth,
-        MinutesPerMonth,
-        PerYear
+        Times,
+        Minutes,
+        Hours
     }
 }
