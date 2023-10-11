@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using ValidHabit.Application.Interfaces;
+using ValidHabit.Infrastructure.Data;
 
 namespace ValidHabit.Infrastructure
 {
@@ -6,6 +8,8 @@ namespace ValidHabit.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services)
         {
+            services.AddScoped<IHabitTrackerDbContext, HabitTrackerDbContext>();
+
             return services;
         }
     }
