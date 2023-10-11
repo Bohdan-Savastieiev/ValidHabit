@@ -1,16 +1,17 @@
-﻿namespace ValidHabit.Domain.Entities
+﻿using ValidHabit.Domain.Primitives;
+
+namespace ValidHabit.Domain.Entities
 {
-    public class UserSummary
+    public class UserSummary : Entity
     {
-        public int Id { get; set; }
-        public int CompletedHabitGoals { get; set; }
-        public int TotalHabitGoals { get; set; }
-        public double Rating { get; set; }
+        public int CompletedHabitGoals { get; init; }
+        public int TotalHabitGoals { get; init; }
+        public double Rating { get; init; }
 
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public DateTimeOffset StartDate { get; init; }
+        public DateTimeOffset EndDate { get; init; }
 
-        public Guid UserId { get; set; }
-        public virtual ApplicationUser User { get; set; }
+        public int UserId { get; init; }
+        public virtual ApplicationUser User { get; init; }
     }
 }

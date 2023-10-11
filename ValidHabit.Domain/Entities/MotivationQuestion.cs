@@ -1,8 +1,9 @@
-﻿namespace ValidHabit.Domain.Entities
+﻿using ValidHabit.Domain.Primitives;
+
+namespace ValidHabit.Domain.Entities
 {
-    public class MotivationQuestion
+    public class MotivationQuestion : Entity
     {
-        public int Id { get; set; }
         public string Question { get; set; }
 
         public virtual ICollection<MotivationAnswer> Answers { get; set; }

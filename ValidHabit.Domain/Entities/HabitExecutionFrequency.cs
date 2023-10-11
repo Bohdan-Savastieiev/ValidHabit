@@ -1,33 +1,28 @@
 ﻿using ValidHabit.Domain.Enums;
 using ValidHabit.Domain.Constants;
 using ValidHabit.Domain.Exceptions.HabitExecutionFrequencyExceptions;
+using ValidHabit.Domain.Primitives;
 
 namespace ValidHabit.Domain.Entities
 {
-    public class HabitExecutionFrequency
+    public class HabitExecutionFrequency : Entity
     {
-        // Constructor
-        public HabitExecutionFrequency(int id, int value, FrequencyType frequencyType, TimeInterval timeInterval, int habitId)
-        {
-            Id = id;
-            Value = value;
-            FrequencyType = frequencyType;
-            TimeInterval = timeInterval;
-            HabitId = habitId;
-
-            Validate();
-        }
-
         // Properties
-        public int Id { get; init; }
-        public int Value { get; init; }
-        public FrequencyType FrequencyType { get; init; }
+        public int Value { get; private set; }
+        public FrequencyType FrequencyType { get; private set; }
         public TimeInterval TimeInterval { get; init; }
 
         public int HabitId { get; init; }
-        public Habit Habit { get; init; }
+        public Habit Habit { get; private set; }
 
         // Methods
+        public void UpdateExecutionFrequency(int newValue, FrequencyType newFrequencyType)
+        {
+            Value = newValue;
+            FrequencyType = newFrequencyType;
+            Validate();
+        }
+
         private void Validate()
         {
             if (Value <= 0)

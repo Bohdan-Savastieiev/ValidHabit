@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ValidHabit.Domain.Primitives;
 
 namespace ValidHabit.Domain.Entities
 {
-    public class HabitAndCategory
+    public class HabitAndCategory : Entity
     {
-        public int Id { get; set; }
+        public int HabitId { get; init; }
+        public virtual Habit Habit { get; init; }
 
-        public int HabitId { get; set; }
-        public virtual Habit Habit { get; set; }
-
-        public int CategoryId { get; set; }
-        public virtual HabitCategory Category { get; set; }
+        public int CategoryId { get; init; }
+        public virtual HabitCategory Category { get; init; }
     }
 }

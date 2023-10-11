@@ -1,12 +1,14 @@
-﻿namespace ValidHabit.Domain.Entities
-{
-    public class ApplicationUser
-    {
-        public Guid UserId { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+﻿using ValidHabit.Domain.Primitives;
+using ValidHabit.Domain.ValueObjects;
 
-        public DateTime CreationDate { get; set; }
+namespace ValidHabit.Domain.Entities
+{
+    public class ApplicationUser : Entity
+    {
+        public FirstName FirstName { get; set; }
+        public LastName LastName { get; set; }
+
+        public DateTimeOffset CreationDate { get; }
 
         public virtual ICollection<MotivationAnswer> MotivationAnswers { get; set; }
         public virtual ICollection<Habit> Habits { get; set; }

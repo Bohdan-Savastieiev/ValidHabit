@@ -1,9 +1,11 @@
-﻿namespace ValidHabit.Domain.Entities
+﻿using ValidHabit.Domain.Primitives;
+using ValidHabit.Domain.ValueObjects;
+
+namespace ValidHabit.Domain.Entities
 {
-    public class HabitTemplate
+    public class HabitTemplate : Entity
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public Name Name { get; set; }
         public string Template { get; set; }
     }
 }

@@ -1,9 +1,11 @@
-﻿namespace ValidHabit.Domain.Entities
+﻿using ValidHabit.Domain.Primitives;
+using ValidHabit.Domain.ValueObjects;
+
+namespace ValidHabit.Domain.Entities
 {
-    public class HabitCategory
+    public class HabitCategory : Entity
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        public Name Name { get; set; }
 
         public virtual ICollection<HabitAndCategory> Habits { get; set; }
     }
