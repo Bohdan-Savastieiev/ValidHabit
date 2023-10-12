@@ -3,7 +3,7 @@ using ValidHabit.Domain.ValueObjects;
 
 namespace ValidHabit.Domain.Entities
 {
-    public class ApplicationUser : Entity
+    public class User : Entity
     {
         public FirstName FirstName { get; set; }
         public LastName LastName { get; set; }

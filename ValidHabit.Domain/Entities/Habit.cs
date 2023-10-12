@@ -18,7 +18,7 @@ namespace ValidHabit.Domain.Entities
         public DateTimeOffset CreationDate { get; }
         
         public int UserId { get; init; }
-        public virtual ApplicationUser User { get; private set; }
+        public virtual User User { get; private set; }
         public virtual ICollection<HabitExecutionFrequency> ExecutionFrequencies
         {
             get

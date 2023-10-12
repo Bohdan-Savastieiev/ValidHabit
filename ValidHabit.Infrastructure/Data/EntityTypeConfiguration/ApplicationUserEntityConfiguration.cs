@@ -6,9 +6,9 @@ using ValidHabit.Domain.ValueObjects;
 
 namespace ValidHabit.Infrastructure.Data.EntityTypeConfiguration
 {
-    public class ApplicationUserEntityConfiguration : IEntityTypeConfiguration<ApplicationUser>
+    public class ApplicationUserEntityConfiguration : IEntityTypeConfiguration<User>
     {
-        public void Configure(EntityTypeBuilder<ApplicationUser> builder)
+        public void Configure(EntityTypeBuilder<User> builder)
         {
             builder.HasKey(x => x.Id);
 

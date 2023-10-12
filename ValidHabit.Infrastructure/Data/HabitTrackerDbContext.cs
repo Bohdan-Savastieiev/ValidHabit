@@ -16,7 +16,7 @@ namespace ValidHabit.Infrastructure.Data
         public DbSet<HabitExecutionFrequency> HabitExecutionFrequencies { get; set;}
         public DbSet<MotivationAnswer> MotivationAnswers { get; set;}
         public DbSet<MotivationQuestion> MotivationQuestions { get; set;}
-        public DbSet<ApplicationUser> UserProfiles { get; set; }
+        public DbSet<User> UserProfiles { get; set; }
         public DbSet<UserSummary> UserSummaries { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
