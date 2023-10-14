@@ -7,23 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8BD363D1-EB2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{09D22555-EED2-43C7-9378-8D77F9C182C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidHabit.Domain", "ValidHabit.Domain\ValidHabit.Domain.csproj", "{7ADFE453-EE10-4F25-8440-7D4646ED375A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidHabit.Domain", "ValidHabit.Domain\ValidHabit.Domain.csproj", "{7ADFE453-EE10-4F25-8440-7D4646ED375A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidHabit.Application", "ValidHabit.Application\ValidHabit.Application.csproj", "{D6E05122-7927-4807-B141-246543DF6CC4}"
-	ProjectSection(ProjectDependencies) = postProject
-		{7ADFE453-EE10-4F25-8440-7D4646ED375A} = {7ADFE453-EE10-4F25-8440-7D4646ED375A}
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidHabit.Application", "ValidHabit.Application\ValidHabit.Application.csproj", "{D6E05122-7927-4807-B141-246543DF6CC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidHabit.Infrastructure", "ValidHabit.Infrastructure\ValidHabit.Infrastructure.csproj", "{CF25C66C-7893-4245-B46C-69EE2BCF4E1D}"
-	ProjectSection(ProjectDependencies) = postProject
-		{7ADFE453-EE10-4F25-8440-7D4646ED375A} = {7ADFE453-EE10-4F25-8440-7D4646ED375A}
-		{D6E05122-7927-4807-B141-246543DF6CC4} = {D6E05122-7927-4807-B141-246543DF6CC4}
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidHabit.Infrastructure", "ValidHabit.Infrastructure\ValidHabit.Infrastructure.csproj", "{CF25C66C-7893-4245-B46C-69EE2BCF4E1D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidHabit.WebUI", "ValidHabit.WebUI\ValidHabit.WebUI.csproj", "{5903BBFE-61BF-4BFD-B478-7891AEEBFDD9}"
-	ProjectSection(ProjectDependencies) = postProject
-		{D6E05122-7927-4807-B141-246543DF6CC4} = {D6E05122-7927-4807-B141-246543DF6CC4}
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidHabit.WebUI", "ValidHabit.WebUI\ValidHabit.WebUI.csproj", "{5903BBFE-61BF-4BFD-B478-7891AEEBFDD9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
