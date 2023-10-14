@@ -6,11 +6,26 @@ using ValidHabit.Domain.ValueObjects;
 
 namespace ValidHabit.Infrastructure.Data.EntityTypeConfiguration
 {
-    public class ApplicationUserEntityConfiguration : IEntityTypeConfiguration<User>
+    public class UserProfileEntityConfiguration : IEntityTypeConfiguration<UserProfile>
     {
-        public void Configure(EntityTypeBuilder<User> builder)
+        public void Configure(EntityTypeBuilder<UserProfile> builder)
         {
             builder.HasKey(x => x.Id);
+
+            //builder.OwnsOne(x => x.Username, fn =>
+            //{
+            //    fn.Property(p => p.Value)
+            //      .HasColumnName("Username")
+            //      .HasMaxLength(Username.MaxLength)
+            //      .IsRequired();
+            //});
+
+            //builder.OwnsOne(x => x.Email, fn =>
+            //{
+            //    fn.Property(p => p.Value)
+            //      .HasColumnName("Email")
+            //      .IsRequired();
+            //});
 
             builder.OwnsOne(x => x.FirstName, fn =>
             {

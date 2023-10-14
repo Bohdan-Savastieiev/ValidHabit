@@ -6,8 +6,8 @@ namespace ValidHabit.Domain.Entities
     {
         public string Answer { get; set; }
         
-        public int UserId { get; init; }
-        public virtual User User { get; init; }
+        public string UserId { get; init; }
+        public virtual UserProfile User { get; init; }
 
         public int QuestionId { get; init; }
         public virtual MotivationQuestion Question { get; init; }

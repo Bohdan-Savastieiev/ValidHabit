@@ -3,8 +3,8 @@ using Microsoft.Extensions.DependencyInjection;
 using ValidHabit.Application.Interfaces;
 using ValidHabit.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
 using ValidHabit.Infrastructure.Services;
+using Microsoft.AspNetCore.Identity;
 
 namespace ValidHabit.Infrastructure
 {
@@ -19,9 +19,10 @@ namespace ValidHabit.Infrastructure
 
             services.AddScoped<IHabitTrackerDbContext, HabitTrackerDbContext>();
 
-            services.AddIdentity<IdentityUser, IdentityRole>()
-                .AddEntityFrameworkStores<HabitTrackerDbContext>()
-                .AddDefaultTokenProviders();
+            services.AddIdentityCore<IdentityUser>()
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<HabitTrackerDbContext>();
+
 
             services.AddScoped<IIdentityService, IdentityService>();
 

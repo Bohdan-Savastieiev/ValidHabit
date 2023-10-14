@@ -11,7 +11,7 @@ namespace ValidHabit.Domain.Entities
         public DateTimeOffset StartDate { get; init; }
         public DateTimeOffset EndDate { get; init; }
 
-        public int UserId { get; init; }
-        public virtual User User { get; init; }
+        public string UserId { get; init; }
+        public virtual UserProfile User { get; init; }
     }
 }

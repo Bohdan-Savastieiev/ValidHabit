@@ -11,34 +11,35 @@ namespace ValidHabit.Domain.ValueObjects
     public class Name : ValueObject
     {
         public const int MaxLength = 50;
+        public string Value { get; }
 
-        private readonly string _value;
-
-        public Name(string value)
+        private Name()
+        {
+            // Required by EF Core
+        }
+        protected Name(string value, string nameType = "Name")
         {
             if (string.IsNullOrWhiteSpace(value))
             {
-                throw new InvalidNameException(GetExceptionMessage("Name is empty."));
+                throw new InvalidNameException($"{nameType} is empty.");
             }
 
             if (value.Length > MaxLength)
             {
-                throw new InvalidNameException(GetExceptionMessage($"Name cannot be more than {MaxLength} characters long."));
+                throw new InvalidNameException($"{nameType} cannot be more than {MaxLength} characters long.");
             }
 
-            _value = value;
+            Value = value;
         }
 
-        public string Value => _value;
+        public static Name Create(string value)
+        {
+            return new Name(value);
+        }
 
         public override IEnumerable<object> GetAtomicValues()
         {
-            yield return _value;
-        }
-
-        protected virtual string GetExceptionMessage(string baseMessage)
-        {
-            return baseMessage;
+            yield return Value;
         }
     }
 }
