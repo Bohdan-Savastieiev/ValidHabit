@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using ValidHabit.Application.DTOs;
+using ValidHabit.Application.Utilities;
 
 namespace ValidHabit.Application.Interfaces
 {
     public interface IIdentityService
     {
-        Task<string> CreateAsync(string username, string password);
-        Task<string> LoginAsync(string username, string password);
+        Task<Result> RegisterAsync(UserRegistrationDto user);
+        Task<Result> LoginAsync(UserLoginDto user);
+        Task<Result> ConfirmEmailAsync(string userId, string token);
     }
 }

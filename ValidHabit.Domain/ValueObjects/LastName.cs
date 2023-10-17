@@ -8,11 +8,11 @@ namespace ValidHabit.Domain.ValueObjects
 {
     public class LastName : Name
     {
-        public LastName(string value) : base(value) { }
+        private LastName(string value) : base(value, "Last Name") { }
 
-        protected override string GetExceptionMessage(string baseMessage)
+        public static new LastName Create(string value)
         {
-            return baseMessage.Replace("Name", "Last Name");
+            return new LastName(value);
         }
     }
 }

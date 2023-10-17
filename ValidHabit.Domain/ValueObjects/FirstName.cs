@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ValidHabit.Domain.ValueObjects
+﻿namespace ValidHabit.Domain.ValueObjects
 {
     public class FirstName : Name
     {
-        public FirstName(string value) : base(value) { }
+        private FirstName(string value) : base(value, "First Name") { }
 
-        protected override string GetExceptionMessage(string baseMessage)
+        public static new FirstName Create(string value)
         {
-            return baseMessage.Replace("Name", "First Name");
+            return new FirstName(value);
         }
     }
 }

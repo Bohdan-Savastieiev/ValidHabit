@@ -1,10 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using ValidHabit.Application.Interfaces;
 using ValidHabit.Domain.Entities;
 
 namespace ValidHabit.Infrastructure.Data
 {
-    public class HabitTrackerDbContext : DbContext, IHabitTrackerDbContext
+    public class HabitTrackerDbContext : IdentityDbContext<IdentityUser>, IHabitTrackerDbContext
     {
         public HabitTrackerDbContext(DbContextOptions options) : base(options) { }
 
@@ -16,7 +18,7 @@ namespace ValidHabit.Infrastructure.Data
         public DbSet<HabitExecutionFrequency> HabitExecutionFrequencies { get; set;}
         public DbSet<MotivationAnswer> MotivationAnswers { get; set;}
         public DbSet<MotivationQuestion> MotivationQuestions { get; set;}
-        public DbSet<User> UserProfiles { get; set; }
+        public DbSet<UserProfile> UserProfiles { get; set; }
         public DbSet<UserSummary> UserSummaries { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

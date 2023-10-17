@@ -3,8 +3,10 @@ using Microsoft.Extensions.DependencyInjection;
 using ValidHabit.Application.Interfaces;
 using ValidHabit.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity;
 using ValidHabit.Infrastructure.Services;
+using Microsoft.AspNetCore.Identity;
+using ValidHabit.Infrastructure.ServiceConfigurations;
+using ValidHabit.Infrastructure.ServiceSettings;
 
 namespace ValidHabit.Infrastructure
 {
@@ -24,6 +26,28 @@ namespace ValidHabit.Infrastructure
                 .AddDefaultTokenProviders();
 
             services.AddScoped<IIdentityService, IdentityService>();
+            services.Configure<IdentitySettings>(configuration.GetSection("IdentitySettings"));
+
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                // Password settings.
+                options.Password.RequireDigit = true;
+                options.Password.RequireLowercase = true;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = true;
+                options.Password.RequiredLength = 8;
+                options.Password.RequiredUniqueChars = 0;
+                options.SignIn.RequireConfirmedAccount = true;
+
+                // User settings.
+                options.User.AllowedUserNameCharacters =
+                "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
+                options.User.RequireUniqueEmail = true;
+            });
+
+            services.AddScoped<IEmailService, EmailService>();
+            services.Configure<EmailSettings>(configuration.GetSection("EmailSettings"));
 
             return services;
         }
