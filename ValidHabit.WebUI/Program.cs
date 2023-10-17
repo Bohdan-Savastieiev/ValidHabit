@@ -5,10 +5,11 @@ using Microsoft.EntityFrameworkCore;
 using ValidHabit.Infrastructure.ServiceConfigurations;
 using ValidHabit.Application.Interfaces;
 using ValidHabit.Infrastructure.Services;
+using ValidHabit.WebUI.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
-var connectionString = builder.Configuration.GetConnectionString("HabitTrackerDbContextConnection") 
-    ?? throw new InvalidOperationException("Connection string 'HabitTrackerDbContextConnection' not found.");
+var connectionString = builder.Configuration.GetConnectionString("LocalDbSqlServer") 
+    ?? throw new InvalidOperationException("Connection string 'LocalDbSqlServer' not found.");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -33,7 +34,10 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+
 app.UseAuthentication();
+//app.UseMiddleware<RequireAuthenticationMiddleware>();
+
 app.UseAuthorization();
 
 app.MapControllerRoute(

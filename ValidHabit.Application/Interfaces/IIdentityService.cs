@@ -7,6 +7,6 @@ namespace ValidHabit.Application.Interfaces
     {
         Task<Result> RegisterAsync(UserRegistrationDto user);
         Task<Result> LoginAsync(UserLoginDto user);
+        Task<Result> ConfirmEmailAsync(string userId, string token);
     }
-
 }

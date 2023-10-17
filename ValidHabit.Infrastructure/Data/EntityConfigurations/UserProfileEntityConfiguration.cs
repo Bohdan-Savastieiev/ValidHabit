@@ -12,21 +12,6 @@ namespace ValidHabit.Infrastructure.Data.EntityTypeConfiguration
         {
             builder.HasKey(x => x.Id);
 
-            //builder.OwnsOne(x => x.Username, fn =>
-            //{
-            //    fn.Property(p => p.Value)
-            //      .HasColumnName("Username")
-            //      .HasMaxLength(Username.MaxLength)
-            //      .IsRequired();
-            //});
-
-            //builder.OwnsOne(x => x.Email, fn =>
-            //{
-            //    fn.Property(p => p.Value)
-            //      .HasColumnName("Email")
-            //      .IsRequired();
-            //});
-
             builder.OwnsOne(x => x.FirstName, fn =>
             {
                 fn.Property(p => p.Value)

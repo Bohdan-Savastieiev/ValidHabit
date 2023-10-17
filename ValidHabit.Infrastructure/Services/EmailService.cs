@@ -14,15 +14,15 @@ namespace ValidHabit.Infrastructure.Services
     {
         private readonly EmailSettings _emailSettings;
 
-        public EmailService(IOptions<EmailSettings> emailSettingsOptions)
+        public EmailService(IOptions<EmailSettings> emailSettings)
         {
-            _emailSettings = emailSettingsOptions.Value;
+            _emailSettings = emailSettings.Value;
         }
 
         public async Task<Result> SendEmailAsync(EmailDto emailDto)
         {
             var email = new MimeMessage();
-            email.From.Add(MailboxAddress.Parse(emailDto.From));
+            email.From.Add(MailboxAddress.Parse(_emailSettings.Email));
             email.To.Add(MailboxAddress.Parse(emailDto.To));
             email.Subject = emailDto.Subject;
             email.Body = new TextPart(TextFormat.Html) { Text = emailDto.Body };

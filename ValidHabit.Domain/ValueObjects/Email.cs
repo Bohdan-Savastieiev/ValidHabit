@@ -8,6 +8,11 @@ namespace ValidHabit.Domain.ValueObjects
     {
         public string Value { get; }
 
+        private Email() 
+        {
+            // Required by EF Core
+        }
+
         private Email(string value)
         {
             if (string.IsNullOrWhiteSpace(value))

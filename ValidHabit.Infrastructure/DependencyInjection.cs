@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using ValidHabit.Infrastructure.Services;
 using Microsoft.AspNetCore.Identity;
 using ValidHabit.Infrastructure.ServiceConfigurations;
+using ValidHabit.Infrastructure.ServiceSettings;
 
 namespace ValidHabit.Infrastructure
 {
@@ -25,6 +26,8 @@ namespace ValidHabit.Infrastructure
                 .AddDefaultTokenProviders();
 
             services.AddScoped<IIdentityService, IdentityService>();
+            services.Configure<IdentitySettings>(configuration.GetSection("IdentitySettings"));
+
 
             services.Configure<IdentityOptions>(options =>
             {

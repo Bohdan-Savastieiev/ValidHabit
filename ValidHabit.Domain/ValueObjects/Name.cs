@@ -10,6 +10,7 @@ namespace ValidHabit.Domain.ValueObjects
 {
     public class Name : ValueObject
     {
+        public const int MinLength = 1;
         public const int MaxLength = 50;
         public string Value { get; }
 
@@ -19,9 +20,14 @@ namespace ValidHabit.Domain.ValueObjects
         }
         protected Name(string value, string nameType = "Name")
         {
-            if (string.IsNullOrWhiteSpace(value))
+            if (value is null)
             {
-                throw new InvalidNameException($"{nameType} is empty.");
+                throw new InvalidNameException($"{nameType} is null.");
+            }
+
+            if (value.Length < MinLength)
+            {
+                throw new InvalidNameException($"{nameType} cannot be less that {MinLength} characters long.");
             }
 
             if (value.Length > MaxLength)
