@@ -8,7 +8,7 @@ namespace ValidHabit.Domain.Entities
         public new string Id { get; init; }
         public FirstName FirstName { get; set; }
         public LastName LastName { get; set; }
-
+        public bool HasAnsweredMotivationQuestions { get; set; }
         public DateTimeOffset CreationDate { get; }
 
         public virtual ICollection<MotivationAnswer> MotivationAnswers { get; set; }

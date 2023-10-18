@@ -6,6 +6,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using ValidHabit.Application.DTOs;
+using ValidHabit.Application.DTOs.Authorization;
 using ValidHabit.Application.Interfaces;
 using ValidHabit.Application.Utilities;
 using ValidHabit.Domain.Entities;
@@ -15,7 +16,7 @@ using ValidHabit.Infrastructure.ServiceSettings;
 
 namespace ValidHabit.Infrastructure.Services
 {
-    public class IdentityService : IIdentityService
+    public class AuthenticationService : IAuthenticationService
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
@@ -23,7 +24,7 @@ namespace ValidHabit.Infrastructure.Services
         private readonly IEmailService _emailService;
         private readonly IdentitySettings _identitySettings;
 
-        public IdentityService(
+        public AuthenticationService(
             IHabitTrackerDbContext dbContext,
             UserManager<IdentityUser> userManager,
             SignInManager<IdentityUser> signInManager,

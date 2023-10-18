@@ -1,0 +1,12 @@
+﻿@using ValidHabit.Application.DTOs.Motivation;
+@model IEnumerable<MotivationQuestionDto>
+@{
+    ViewData["Title"] = "Motivation Questions";
+}
+
+<h3>Please answer the following questions</h3>
+
+@foreach(var question in Model)
+{
+    <span>@question.Question</span>
+}

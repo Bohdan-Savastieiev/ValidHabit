@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ValidHabit.Application.DTOs
+namespace ValidHabit.Application.DTOs.Authorization
 {
     public class UserLoginDto
     {

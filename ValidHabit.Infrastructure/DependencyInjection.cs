@@ -25,7 +25,7 @@ namespace ValidHabit.Infrastructure
                 .AddEntityFrameworkStores<HabitTrackerDbContext>()
                 .AddDefaultTokenProviders();
 
-            services.AddScoped<IIdentityService, IdentityService>();
+            services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.Configure<IdentitySettings>(configuration.GetSection("IdentitySettings"));
 
 

@@ -28,6 +28,9 @@ namespace ValidHabit.Infrastructure.Data.EntityTypeConfiguration
                   .IsRequired();
             });
 
+            builder.Property(x => x.HasAnsweredMotivationQuestions)
+                .IsRequired();
+
             builder.Property(x => x.CreationDate)
                 .ValueGeneratedOnAdd()
                 .HasDefaultValueSql("CURRENT_TIMESTAMP")
